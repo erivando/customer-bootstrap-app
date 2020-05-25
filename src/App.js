@@ -1,25 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Container } from 'react-bootstrap';
+import CustomerContextoProvider from './Customer';
+import NavBar from './component/navBar';
+import CustomerList from './component/customerList';
+import CustomerForm from './component/customerForm';
+import CustomerMessage from './component/customerMessage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Container>
+      <CustomerContextoProvider>
+        <CustomerMessage />
+        <NavBar />
+        <CustomerList />
+        <CustomerForm />
+      </CustomerContextoProvider>
+    </Container>
+    </>
   );
 }
 
